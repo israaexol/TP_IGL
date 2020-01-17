@@ -1,0 +1,379 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/all.js"></script>
+
+
+          <script>
+        $(function() {
+            setupLanguages(["bash","javascript"]);
+        });
+      </script>
+      </head>
+
+  <body class="">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+        <img src="images/logo.png" />
+                    <div class="lang-selector">
+                                  <a href="#" data-language-name="bash">bash</a>
+                                  <a href="#" data-language-name="javascript">javascript</a>
+                            </div>
+                            <div class="search">
+              <input type="text" class="search" id="input-search" placeholder="Search">
+            </div>
+            <ul class="search-results"></ul>
+              <div id="toc">
+      </div>
+                    <ul class="toc-footer">
+                                  <li><a href='http://github.com/mpociot/documentarian'>Documentation Powered by Documentarian</a></li>
+                            </ul>
+            </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+          <!-- START_INFO -->
+<h1>Info</h1>
+<p>Bienvenue sur la documentation du Back-End de notre TP.</p>
+<!-- END_INFO -->
+<h1>Fonctionnalités</h1>
+<!-- START_da92a85b0737a603c93b0db10deaf6a0 -->
+<h2>api/vue</h2>
+<blockquote>
+<p>Exemple de requete:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost/api/vue" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/vue"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>Requete HTTP</h3>
+<p><code>POST api/vue</code></p>
+<!-- END_da92a85b0737a603c93b0db10deaf6a0 -->
+<!-- START_c5fb2123324df8bf605c201731196342 -->
+<h2>Affichage des absences d'un étudiant à partir de api/abs</h2>
+<blockquote>
+<p>Exemple de requete:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/abs" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/abs"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "data": [
+        {
+            "module": "SYS",
+            "date": "2019-11-19",
+            "id": 1
+        },
+        {
+            "module": "SYS",
+            "date": "2019-11-11",
+            "id": 3
+        },
+        {
+            "module": "THP",
+            "date": "2019-11-19",
+            "id": 5
+        }
+    ]
+}</code></pre>
+<h3>Requete HTTP</h3>
+<p><code>GET api/abs</code></p>
+<!-- END_c5fb2123324df8bf605c201731196342 -->
+<!-- START_f170673a41f0eb135f09ffe673d8bcb3 -->
+<h2>Afficher liste des étudiants d'un groupe api/affichgroupe/{id_groupe}</h2>
+<blockquote>
+<p>Exemple de requete:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/affichgroupe/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/affichgroupe/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Exemple de response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "data": []
+}</code></pre>
+<h3>Requete HTTP</h3>
+<p><code>GET api/affichgroupe/{id_groupe}</code></p>
+<!-- END_f170673a41f0eb135f09ffe673d8bcb3 -->
+<!-- START_e8b652dc20944880bb55ce67268c966c -->
+<h2>Afficher nom d'un étudiant api/nom</h2>
+<blockquote>
+<p>Exemple de requete:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/nom" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/nom"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "data": [
+        {
+            "nometudiant": "Boudjellay",
+            "prenometudiant": "Mehdi"
+        }
+    ]
+}</code></pre>
+<h3>Requete HTTP</h3>
+<p><code>GET api/nom</code></p>
+<!-- END_e8b652dc20944880bb55ce67268c966c -->
+<!-- START_1596c35b519a8b36d0ebdfc7b32cd81b -->
+<h2>Afficher la liste des groupes d'un enseignant api/groupes</h2>
+<blockquote>
+<p>Exemple de requete:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/groupes" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/groupes"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "data": [
+        {
+            "niveau": 3,
+            "groupe": "1CSG08",
+            "id": 1
+        },
+        {
+            "niveau": 3,
+            "groupe": "1CSG03",
+            "id": 3
+        },
+        {
+            "niveau": 3,
+            "groupe": "1CSG04",
+            "id": 4
+        }
+    ]
+}</code></pre>
+<h3>Requete HTTP</h3>
+<p><code>GET api/groupes</code></p>
+<!-- END_1596c35b519a8b36d0ebdfc7b32cd81b -->
+<!-- START_f2ee9430d39ad3cec4bf0269db41a3d0 -->
+<h2>Afficher nom d'un enseignant api/nomprof</h2>
+<blockquote>
+<p>Exemple de requete:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/nomprof" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/nomprof"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "data": [
+        {
+            "nomens": "Temglit ",
+            "prenomens": "Nacera"
+        }
+    ]
+}</code></pre>
+<h3>Requete HTTP</h3>
+<p><code>GET api/nomprof</code></p>
+<!-- END_f2ee9430d39ad3cec4bf0269db41a3d0 -->
+<!-- START_74f4f5c4cc0f54fdd5c9062567e4a23f -->
+<h2>Afficher la liste de tous les étudiants api/affich</h2>
+<blockquote>
+<p>Exemple de requete:</p>
+<pre><code class="language-bash">curl -X GET \
+-G "http://localhost/api/affich" \
+-H "Content-Type: application/json" \
+-H "Accept: application/json"</code></pre>
+</blockquote>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/affich"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "data": [
+        {
+            "nom": "KHOUAS",
+            "prenom": "Ouerdia",
+            "id": 1
+        },
+        {
+            "nom": "Hamdine",
+            "prenom": "Israa",
+            "id": 2
+        },
+        {
+            "nom": "Boudjellay",
+            "prenom": "Mehdi",
+            "id": 3
+        },
+        {
+            "nom": "Guin12",
+            "prenom": "YAnus",
+            "id": 4
+        },
+        {
+            "nom": "TC",
+            "prenom": "Yacine",
+            "id": 5
+        },
+        {
+            "nom": "Debiane",
+            "prenom": "Mehdi",
+            "id": 6
+        },
+        {
+            "nom": "Hennouni",
+            "prenom": "Narimane",
+            "id": 7
+        },
+        {
+            "nom": "Elhassane",
+            "prenom": "Nour",
+            "id": 8
+        },
+        {
+            "nom": "MDJAAAhed",
+            "prenom": "Lamiaa",
+            "id": 9
+        },
+        {
+            "nom": "Rachedi",
+            "prenom": "NadA",
+            "id": 10
+        }
+    ]
+}</code></pre>
+<h3>Requete HTTP</h3>
+<p><code>GET api/affich</code></p>
+<!-- END_74f4f5c4cc0f54fdd5c9062567e4a23f -->
+<!-- START_66e08d3cc8222573018fed49e121e96d -->
+      </div>
+      <div class="dark-box">
+                        <div class="lang-selector">
+                                    <a href="#" data-language-name="bash">bash</a>
+                                    <a href="#" data-language-name="javascript">javascript</a>
+                              </div>
+                </div>
+    </div>
+  </body>
+</html>

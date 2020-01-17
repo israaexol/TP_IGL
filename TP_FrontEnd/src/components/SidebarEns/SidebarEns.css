@@ -1,0 +1,19 @@
+
+i{
+    margin-left: 50px;
+    font-size: 14px;
+}
+.sidebar .nav p  {
+    margin-bottom : 35px;
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase; }
+
+    .sidebar .nav p:hover  {
+        color: white;
+        margin-bottom : 35px;
+        line-height: 30px;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase; }

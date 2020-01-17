@@ -1,0 +1,11 @@
+.content {
+    margin-top: 50px;
+}
+.wrapper {
+    background-color: rgb(233, 233, 233);
+}
+.content .liengrp {
+    margin-left: 20px;
+    margin-top: 400px;
+    font-size: 18px;
+}
